@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var emailInput = document.querySelector('input[name="username"]');
     var passwordInput = document.querySelector('input[name="password"]');
 
+    if (!signInButton || !emailInput || !passwordInput) {
+        console.error('One or more elements not found');
+        return;
+    }
+
     signInButton.addEventListener("click", function() {
         var email = emailInput.value;
         var password = passwordInput.value;
